@@ -49,6 +49,19 @@ republican.countTotalVotes;
 console.log(democrat.totalVotes);
 console.log(republican.totalVotes);
 
+var winner = "TBD";
+
+if (democrat.totalVotes > republican.totalVotes) {
+    winner = democrat.name;
+}
+else if (republican.totalVotes < democrat.totalVotes) {
+    winner = republican.name;
+}
+else{
+    winner = "No one"
+}
+
+console.log(winner = " won the election!");
 
 
 
