@@ -54,6 +54,22 @@ republican.countTotalVotes;
 console.log(democrat.totalVotes);
 console.log(republican.totalVotes);
 
+//determine the winner of the state
+var setStateResults = function(state){
+ 
+    theStates[state].winner = null;
+ 
+    if (democrat.electionResults[state] > republican.electionResults[state]) {
+        
+        theStates[state].winner = democrat; //set winner to the candidate object, not the candidate's name this time
+ 
+    } else if (republican.electionResults[state] < democrat.electionResults[state]) {
+ 
+        theStates[state].winner = republican;
+ 
+    }
+}
+
 var winner = "TBD";
 
 if (democrat.totalVotes > republican.totalVotes) {
@@ -69,6 +85,26 @@ else{
 console.log(winner = " won the election!");
 
 
+
+
+//determine winner of state
+// party.electionResults[state];
+
+/* var setStateResults = function() 
+{
+    if (democrat.electionResults[0] > republican.electionResults[0]) {
+        stateWinner = democrat;
+        console.log(democrat + " is the winner of " state.nameFull "!");
+    }
+    else if (republican.electionResults[0] > democrat.electionResults[0]) {
+        stateWinner = republican;
+        console.log(republican + " is the winner of " state.nameFull "!");
+    }
+    else {
+        console.log("No one wins, call the Supreme Court!");
+    }
+        
+} */
 
 /* var demPolitician = function()
 {
