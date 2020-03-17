@@ -81,6 +81,42 @@ var candidate1Results = body.children[0].children[1];
 var candidate2Results = body.children[1].children[1];
 var winnersName = body.children[2].children[1];
 
+
+/* My solution
+stateName.innerText = theStates[state].nameFull;
+abbrev.innerText = theStates[state].nameAbbrev;
+candidate1Name1.innerText = democrat.name;
+candidate2Name.innerText = republican.name;
+candidate1Results.innerText = democrat.electionResults[state];
+candidate2Results.innerText = republican.electionResults[state];
+
+if (democrat.totalVotes > republican.totalVotes) {
+    winnersName.innerText = democrat.name;
+}
+else if (republican.totalVotes < democrat.totalVotes) {
+    winnersName.innerText = republican.name;
+}
+else{
+    winnerName.innerText = "No one";
+} 
+*/
+
+//Corrected solution
+stateName.innerText = theStates[state].nameFull;
+abbrev.innerText = "(" +theStates[state].nameAbbrev + ")";
+ 
+candidate1Name.innerText = democrat.name;
+candidate2Name.innerText = republican.name;
+ 
+candidate1Results.innerText = democrat.electionResults[state];
+candidate2Results.innerText = republican.electionResults[state];
+ 
+if (theStates[state].winner === null){
+    winnersName.innerText = "DRAW";
+} else {
+    winnersName.innerText = theStates[state].winner.name;
+}
+
 /* original solution
 var stateResultsTable = document.getElementById('stateResults');
 var headerStateName = stateResultsTable.children[0].children[0];
@@ -131,7 +167,7 @@ else if (republican.totalVotes < democrat.totalVotes) {
     winner = republican.name;
 }
 else{
-    winner = "No one"
+    winner = "No one";
 }
 
 console.log(winner = " won the election!");
