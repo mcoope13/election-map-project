@@ -70,6 +70,34 @@ var setStateResults = function(state){
     }
 }
 
+var stateWinner = theStates[state].winner;
+ 
+if (stateWinner !== null) {
+    theStates[state].rgbColor = stateWinner.partyColor;
+} else {
+    theStates[state].rgbColor = [11,32,57];
+}
+
+/* My solution
+var table = document.getElementById('countryResults');
+//Reach name one
+table.children[0].children[0].children[0].innerText = democrat.name;
+//Reach results one
+table.children[0].children[0].children[1].innerText = democrat.totalVotes;
+//Reach name two
+table.children[0].children[0].children[2].innerText = republican.name;
+//Reach results two
+table.children[0].children[0].children[3].innerText = republican.totalVotes; */
+
+var countryInfoTable = document.getElementById('countryResults');
+var row = countryInfoTable.children[0].children[0];
+ 
+row.children[0].innerText = democrat.name;
+row.children[1].innerText = democrat.totalVotes;
+row.children[2].innerText = republican.name;
+row.children[3].innerText = republican.totalVotes;
+row.children[5].innerText = winner;
+
 var winner = "TBD";
 
 if (democrat.totalVotes > republican.totalVotes) {
@@ -83,7 +111,6 @@ else{
 }
 
 console.log(winner = " won the election!");
-
 
 
 
