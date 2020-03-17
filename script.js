@@ -69,6 +69,28 @@ var setStateResults = function(state){
  
     }
 }
+// Corrected solution
+var stateInfoTable = document.getElementById('stateResults');
+var header = stateInfoTable.children[0];
+var body = stateInfoTable.children[1];
+var stateName = header.children[0].children[0];
+var abbrev = header.children[0].children[1];
+var candidate1Name = body.children[0].children[0];
+var candidate2Name = body.children[1].children[0];
+var candidate1Results = body.children[0].children[1];
+var candidate2Results = body.children[1].children[1];
+var winnersName = body.children[2].children[1];
+
+/* original solution
+var stateResultsTable = document.getElementById('stateResults');
+var headerStateName = stateResultsTable.children[0].children[0];
+var headerStateAbbr = stateResultsTable.children[0].children[1];
+var stateNameOne = stateResultsTable.children[1].children[0].children[0];
+var stateResultsOne = stateResultsTable.children[1].children[0].children[1];
+var stateNameTwo = stateResultsTable.children[1].children[1].children[0];
+var stateResultsTwo = stateResultsTable.children[1].children[1].children[1];
+var stateWinnerName = stateResultsTable.children[2].children[0].children[0];
+*/
 
 var stateWinner = theStates[state].winner;
  
@@ -77,6 +99,8 @@ if (stateWinner !== null) {
 } else {
     theStates[state].rgbColor = [11,32,57];
 }
+
+
 
 /* My solution
 var table = document.getElementById('countryResults');
